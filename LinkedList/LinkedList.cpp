@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LinkedList.h"
+using namespace std;
 
 template <class T>
 List<T>::List(List<T>& L) {
