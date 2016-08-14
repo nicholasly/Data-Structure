@@ -1,5 +1,6 @@
 #include <iostream>
 #include "CircList.h"
+using namespace std;
 
 template <class T>
 CircList::CircList(const T& x) {
