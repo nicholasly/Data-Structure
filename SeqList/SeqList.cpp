@@ -1,5 +1,7 @@
 #include <iostream>
 #include "SeqList.h"
+using namespace std;
+
 template <class T>
 SeqList<T>::SeqList(int sz) {
 	if (sz > 0) {
@@ -12,6 +14,7 @@ SeqList<T>::SeqList(int sz) {
 		}
 	}
 }
+
 template <class T>
 SeqList::SeqList(SeqList<T>& L) {
 	maxSize = L.Size();
@@ -26,6 +29,7 @@ SeqList::SeqList(SeqList<T>& L) {
 		data[i - 1] = value;
 	}
 }
+
 template <class T>
 void SeqList<T>::reSize(int newSize) {
 	if (newSize <= 0) {
@@ -49,6 +53,7 @@ void SeqList<T>::reSize(int newSize) {
 		maxSize = newSize;
 	}
 }
+
 template <class T>
 int SeqList::Search(T& x) const {
 	for (int i = 0; i <= last; i++) {
@@ -56,11 +61,13 @@ int SeqList::Search(T& x) const {
 	}
 	return 0;
 }
+
 template <class T>
 int SeqList::Locate(int i) const {
 	if (i >= 1 && i <= last + 1) return i;
 	else return 0
 }
+
 template <class T>
 bool SeqList::Insert(int i, T& x) {
 	if (last == maxSize - 1) return false;
@@ -72,6 +79,7 @@ bool SeqList::Insert(int i, T& x) {
 	last++;
 	return true;
 }
+
 template <class T>
 bool SeqList::Remove(int i, T& x) {
 	if (last == -1) return false;
@@ -83,6 +91,7 @@ bool SeqList::Remove(int i, T& x) {
 	last--;
 	return true;
 }
+
 template <class T>
 void SeqList::input() {
 	cout << "Please input : ";
@@ -96,12 +105,14 @@ void SeqList::input() {
 		cout << i + 1 << endl;
 	}
 }
+
 template <class T>
 void SeqList::output() {
 	for (int i = 0; i <= last; i++) {
 		cout << "#" << i + 1 << ":" << data[i] << endl;
 	}
 }
+
 template <class T>
 SeqList<T> SeqList<T>::operator=(SeqList<T>& L) {
         T temp;
