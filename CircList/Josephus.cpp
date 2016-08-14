@@ -1,5 +1,6 @@
 #include <iostream>
 #include "CircList.h"
+using namespace std;
 template <class T>
 void Josephus(CircList<T>& Js, int n, int m) {
 	CircLinkNode<T> * p = Js.Locate(i), * pre = NULL;
