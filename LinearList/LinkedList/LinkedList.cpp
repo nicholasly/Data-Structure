@@ -50,6 +50,18 @@ LinkNode<T> * List<T>::Search(T x) {
 }
 
 template <class T>
+LinkNode<T> * List<T>::Locate(int i) {
+	if (i < 0) return NULL;
+	LinkNode<T> * current = first;
+	int k = 0;
+	while (current != NULL && k < i) {
+		current = current->link;
+		k++;
+	}
+	return current;
+}
+
+template <class T>
 bool List<T>::getData(int i, T& x) const {
 	if (i <= 0) return NULL;
 	LinkNode<T> * current = Locate(i);
@@ -96,7 +108,7 @@ bool List<T>::Remove(int i, T& x) {
 template <class T>
 void List<T>::output() {
 	LinkNode<T> * current = first->link;
-	while (current-> != NULL) {
+	while (current != NULL) {
 		cout << current->data << endl;
 		current = current->link;
 	}

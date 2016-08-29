@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LinearList.h"
+using namespace std;
 
 template <class T>
 struct LinkNode {           //  The Definition of Link Node 
