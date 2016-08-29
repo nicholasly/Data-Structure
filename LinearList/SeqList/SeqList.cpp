@@ -16,9 +16,10 @@ SeqList<T>::SeqList(int sz) {
 }
 
 template <class T>
-SeqList::SeqList(SeqList<T>& L) {
+SeqList<T>::SeqList(SeqList<T>& L) {
 	maxSize = L.Size();
 	last = L.Search() - 1;
+	T value;
 	data = new T[maxSize];
 	if (data == NULL) {
 		cerr << "Error!" << endl;
@@ -43,7 +44,7 @@ void SeqList<T>::reSize(int newSize) {
 			exit(1);
 		}
 		int n = last + 1;
-		T * srptr = data;
+		T * srcptr = data;
 		T * destptr = newarray;
 		while (n--) {
 			*destptr++ = *srcptr++;
@@ -55,7 +56,7 @@ void SeqList<T>::reSize(int newSize) {
 }
 
 template <class T>
-int SeqList::Search(T& x) const {
+int SeqList<T>::Search(T& x) const {
 	for (int i = 0; i <= last; i++) {
 		if (data[i] == x) return i + 1;
 	}
@@ -63,13 +64,13 @@ int SeqList::Search(T& x) const {
 }
 
 template <class T>
-int SeqList::Locate(int i) const {
+int SeqList<T>::Locate(int i) const {
 	if (i >= 1 && i <= last + 1) return i;
-	else return 0
+	else return 0;
 }
 
 template <class T>
-bool SeqList::Insert(int i, T& x) {
+bool SeqList<T>::Insert(int i, T& x) {
 	if (last == maxSize - 1) return false;
 	if (i < 0 || i > last+1) return false;
 	for (int j = last; j >= i; j--) {
@@ -81,7 +82,7 @@ bool SeqList::Insert(int i, T& x) {
 }
 
 template <class T>
-bool SeqList::Remove(int i, T& x) {
+bool SeqList<T>::Remove(int i, T& x) {
 	if (last == -1) return false;
 	if (i < 1 || i > last + 1) return false;
 	x = data[i - 1];
@@ -93,7 +94,7 @@ bool SeqList::Remove(int i, T& x) {
 }
 
 template <class T>
-void SeqList::input() {
+void SeqList<T>::input() {
 	cout << "Please input : ";
 	while (1) {
 		cin >> last;
@@ -107,7 +108,7 @@ void SeqList::input() {
 }
 
 template <class T>
-void SeqList::output() {
+void SeqList<T>::output() {
 	for (int i = 0; i <= last; i++) {
 		cout << "#" << i + 1 << ":" << data[i] << endl;
 	}
@@ -115,7 +116,8 @@ void SeqList::output() {
 
 template <class T>
 SeqList<T> SeqList<T>::operator=(SeqList<T>& L) {
-        T temp;
+    SeqList<T> temp;
+    T value;
 	temp.maxSize = L.Size();
 	temp.last = L.Search() - 1;
 	temp.data = new T[temp.maxSize];

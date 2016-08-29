@@ -43,5 +43,5 @@ public:
     }
     void input();
     void output();
-    
+    SeqList<T> operator=(SeqList<T>& L);
 };
