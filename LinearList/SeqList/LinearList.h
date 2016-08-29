@@ -1,5 +1,4 @@
 #include <iostream>
-enum bool{false, true};
 template <class T>
 class LinearList {
 public:
@@ -18,5 +17,5 @@ public:
   virtual void Sort() = 0;
   virtual void input() = 0;
   virtual void output() = 0;
-  virtual LinearList<T> operator=(LinearList<T>& L) = 0;
+  virtual LinearList<T>& operator=(LinearList<T>& L) = 0;
 };
