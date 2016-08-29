@@ -6,7 +6,7 @@ struct CircLinkNode {
 	CircLinkNode<T> * link;
 	CircLinkNode(CircLinkNode<T> * next = NULL) : link(next) {}
 	CircLinkNode(T d, CircLinkNode<T> * next = NULL) : data(d), link(next) {}
-}
+};
 
 template <class T>
 class CircList : public LinearList<T> {

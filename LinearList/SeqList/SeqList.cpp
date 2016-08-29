@@ -116,8 +116,8 @@ void SeqList<T>::output() {
 
 template <class T>
 SeqList<T> SeqList<T>::operator=(SeqList<T>& L) {
-    SeqList<T> temp;
-    T value;
+	SeqList<T> temp;
+	T value;
 	temp.maxSize = L.Size();
 	temp.last = L.Search() - 1;
 	temp.data = new T[temp.maxSize];

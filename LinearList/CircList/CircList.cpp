@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class T>
-CircList::CircList(const T& x) {
+CircList<T>::CircList(const T& x) {
 	last = first = new CircLinkNode<T>(x);
 }
 
@@ -23,7 +23,7 @@ CircList<T>::CircList(CircList<T>& L) {
 }
 
 template <class T>
-CircList::~CircList() {
+CircList<T>::~CircList() {
 	CircLinkNode<T> * q;
 	while (first->link != first || first->link != NULL) {
 		q = first->link;
@@ -33,7 +33,7 @@ CircList::~CircList() {
 }
 
 template <class T>
-int CircList::CircListLength() const {
+int CircList<T>::Length() const {
 	int length = 0;
 	CircLinkNode<T> * temp = first->link;
 	while (temp != first) {
@@ -42,18 +42,19 @@ int CircList::CircListLength() const {
 	}
 	return length;
 }
+
 template <class T>
-CircLinkNode<T> * CircList::getHead() const {
+CircLinkNode<T> * CircList<T>::getHead() const {
 	return first;
 }
 
 template <class T>
-void CircList::setHead(CircLinkNode<T> * p) {
+void CircList<T>::setHead(CircLinkNode<T> * p) {
 	first = p;
 }
 
 template <class T>
-CircLinkNode<T> * CircList::Search(T x) {
+CircLinkNode<T> * CircList<T>::Search(T x) {
 	CircLinkNode<T> * temp = first->link;
 	while (temp != first) {
 		if (x == temp->data) break;
@@ -63,7 +64,7 @@ CircLinkNode<T> * CircList::Search(T x) {
 }
 
 template <class T>
-CircLinkNode<T> * CircList::Locate(int i) {
+CircLinkNode<T> * CircList<T>::Locate(int i) {
 	if (i < 0) return NULL;
 	int length = 0;
 	CircLinkNode<T> * temp = first;
@@ -75,24 +76,24 @@ CircLinkNode<T> * CircList::Locate(int i) {
 }
 
 template <class T>
-T& CircList::getData(int i) const {
-	if (i <= 0 || i > CircListLength()) return; 
+T& CircList<T>::getData(int i) const {
+	if (i <= 0 || i > Length()) return; 
 	CircLinkNode<T> * current = Locate(i);
 	return current->data;
 }
 
 template <class T>
-void CircList::setData(int i, T& x) {
-	if (i <= 0 || i > CircListLength()) return;
+void CircList<T>::setData(int i, T& x) {
+	if (i <= 0 || i > Length()) return;
 	CircLinkNode<T> * current = Locate(i);
 	current->data = x;
 }
 
 template <class T>
-bool CircList::Insert(int i, T& x) {
+bool CircList<T>::Insert(int i, T& x) {
 	CircLinkNode<T> * current = Locate(i);
 	if (current == NULL) return false;
-	CircLinkNode<T> * newNode<T>(x);
+	CircLinkNode<T> * newNode = new CircLinkNode<T>(x);
 	if (newNode == NULL) {
 		cerr << "Error!" << endl; exit(1);
 	}
@@ -102,7 +103,7 @@ bool CircList::Insert(int i, T& x) {
 }
 
 template <class T>
-bool CircList::Remove(int i, T& x) {
+bool CircList<T>::Remove(int i, T& x) {
 	CircLinkNode<T> * current = Locate(i - 1);
 	if (current == NULL || current->link == NULL) return false;
 	CircLinkNode<T> * del = current->link;
