@@ -3,6 +3,11 @@
 using namespace std;
 
 template <class T>
+CircList<T>::CircList() {
+	last = first = NULL;
+}
+
+template <class T>
 CircList<T>::CircList(const T& x) {
 	last = first = new CircLinkNode<T>(x);
 }

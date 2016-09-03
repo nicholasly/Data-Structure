@@ -11,6 +11,7 @@ struct CircLinkNode {
 template <class T>
 class CircList : public LinearList<T> {
 public:
+	CircList();
 	CircList(const T& x);
 	CircList(CircList<T>& L);
 	~CircList();

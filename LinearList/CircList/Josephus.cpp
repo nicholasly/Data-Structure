@@ -3,7 +3,7 @@
 using namespace std;
 template <class T>
 void Josephus(CircList<T>& Js, int n, int m) {
-	CircLinkNode<T> * p = Js.Locate(i), * pre = NULL;
+	CircLinkNode<T> * p = Js.Locate(1), * pre = NULL;
 	int i, j;
 	for (i = 0; i < n - 1; i++) {
 		for (j = 1; j < m; j++) {
@@ -17,9 +17,11 @@ void Josephus(CircList<T>& Js, int n, int m) {
 	}
 }
 
-void main() {
+int main() {
 	CircList<int> clist;
 	int i, n, m;
 	cin >> n >> m;
+	for (i = 1; i <= n; i++) clist.Insert(i - 1, i);
 	Josephus(clist, n, m);
+	return 0;
 }
