@@ -1,2 +1,2 @@
-# Data-Structure-C-
+# Data-Structure-C++-
 the data structure developed by myself
