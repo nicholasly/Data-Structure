@@ -1,7 +1,12 @@
+#ifndef SEQ_LIST_H
+#define SEQ_LIST_H
+
 #include <iostream>
 #include <stdlib.h>
 #include "LinearList.h"
+
 const int defaultSize = 100;
+
 template <class T>
 class SeqList : public LinearList<T> {
 protected:
@@ -45,3 +50,5 @@ public:
     void output();
     SeqList<T> operator=(SeqList<T>& L);
 };
+
+#endif

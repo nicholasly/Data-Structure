@@ -1,3 +1,6 @@
+#ifndef DBL_LIST_H
+#define DBL_LIST_H
+
 #include <iostream>
 #include "LinearList.h"
 template <class T>
@@ -25,4 +28,6 @@ public:
 	bool Remove(int i, T& x, int d);
 private:
 	DblNode<T> * first;
-}
+};
+
+#endif

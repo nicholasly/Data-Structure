@@ -1,5 +1,5 @@
-#ifndef SEQ_STACK
-#define SEQ_STACK
+#ifndef SEQ_STACK_H
+#define SEQ_STACK_H
 #include <iostream>
 #include <assert.h>
 #include "Stack.h"

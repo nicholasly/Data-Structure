@@ -9,7 +9,7 @@ struct Term {
 	Term(float c, int e, Term * next = NULL)
 	   {coef = c; exp = e; link = next;}
 	Term * InsertAfter(float c, int e);
-	friend ostream& operator << (ostream&, const T&);	
+	friend std::ostream& operator << (std::ostream&, const Term&);	
 };
 //  The definition of the term of the polynomal
 
@@ -28,8 +28,8 @@ public:
 	}
 private:
 	Term * first;
-	friend ostream& operator << (ostream&, const Polynomal&);
-	friend istream& operator >> (istream&, Polynomal&);
+	friend std::ostream& operator << (std::ostream&, const Polynomal&);
+	friend std::istream& operator >> (std::istream&, Polynomal&);
 	friend Polynomal operator + (Polynomal&, Polynomal&);
 	friend Polynomal operator * (Polynomal&, Polynomal&);
 };

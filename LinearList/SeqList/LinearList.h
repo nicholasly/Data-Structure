@@ -1,3 +1,6 @@
+#ifndef LINEAR_LIST_H
+#define LINEAR_LIST_H
+
 #include <iostream>
 template <class T>
 class LinearList {
@@ -19,3 +22,5 @@ public:
   virtual void output() = 0;
   virtual LinearList<T>& operator=(LinearList<T>& L) = 0;
 };
+
+#endif

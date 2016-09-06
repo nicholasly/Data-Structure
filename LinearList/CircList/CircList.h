@@ -1,3 +1,6 @@
+#ifndef CIR_LIST_H
+#define CIR_LIST_H
+
 #include <iostream>
 #include "LinearList.h"
 template <class T>
@@ -29,3 +32,5 @@ public:
 private:
 	CircLinkNode<T> * first, * last;
 };
+
+#endif
